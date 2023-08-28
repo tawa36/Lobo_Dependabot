@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "url-parse": "^0.0.0"
+    "url-parse": "^1.5.10"
   }
 }

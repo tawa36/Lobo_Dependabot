@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="form">
+    <h2>新しいメッセージを投稿</h2>
+    <form method="POST" action="/">
+      <textarea name="message" rows="3" cols="40"></textarea><br>
+      <input type="submit" value="投稿">
+    </form>
+  </div>
+  
+  <h2>メッセージ一覧</h2>
+  <% messages.each do |message| %>
+    <div class="message">
+      <!-- XSS脆弱性: ERBでユーザー入力をエスケープせずに出力 -->
+      <%= message['message'] %>
+    </div>
+  <% end %>
+</body>
+</html>
